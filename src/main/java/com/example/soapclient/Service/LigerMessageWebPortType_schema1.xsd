@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <xs:schema version="1.0" targetNamespace="http://tempuri.org" xmlns:tns="http://tempuri.org" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="download" type="tns:download"/>
+  <xs:element name="GetFixListRangeData" type="tns:GetFixListRangeData"/>
 
-  <xs:element name="downloadResponse" type="tns:downloadResponse"/>
+  <xs:element name="GetFixListRangeDataResponse" type="tns:GetFixListRangeDataResponse"/>
+
+  <xs:element name="SOAPException" type="tns:SOAPException"/>
 
   <xs:element name="sayHello" type="tns:sayHello"/>
 
   <xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
 
-  <xs:complexType name="download">
+  <xs:complexType name="GetFixListRangeData">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="GetFixListRangeDataResponse">
     <xs:sequence>
-      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+      <xs:element name="return" type="xs:base64Binary" nillable="true" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="downloadResponse">
+  <xs:complexType name="SOAPException">
     <xs:sequence>
-      <xs:element name="return" type="xs:base64Binary" nillable="true" minOccurs="0"/>
+      <xs:element name="message" type="xs:string" minOccurs="0"/>
     </xs:sequence>
   </xs:complexType>
 
